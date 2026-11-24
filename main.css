@@ -14,18 +14,20 @@ body {
 
   grid-template-columns: minmax(0, 1.5fr) minmax(220px, 1fr);
 
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(3, auto);
 
   grid-template-areas:
     "hero cookie1"
     "hero cookie2"
     "hero cookie3";
 
-  gap: 1.5rem;
-
   min-height: 100vh;
   padding-top: 3rem;
   box-sizing: border-box;
+}
+
+h1 {
+  margin-top: 0;
 }
 
 /* Wrapper */
@@ -45,7 +47,6 @@ body {
   background-position: center top;
   background-repeat: no-repeat;
 
-  min-height: 100vh;
   display: flex;
   align-items: center;
 }
@@ -55,13 +56,13 @@ body {
   max-width: 30rem;
   width: 100%;
   position: relative;
-  top: 2rem;
 }
 
 .hero-header {
   font-weight: 700;
   font-size: 4rem;
   margin-bottom: 1.8rem;
+  line-height: 0.9;
 }
 
 .hero-p {
@@ -74,12 +75,14 @@ body {
 .hero-button,
 .nav-button {
   font-weight: 400;
-  font-size: 1.4rem;
+  font-size: 1rem;
   color: white;
   border-radius: 0.5rem;
   background-color: brown;
   border: 1px solid black;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  padding: 0.5rem 1rem;
+  line-height: 1;
 }
 
 .hero-button {
@@ -106,14 +109,10 @@ body {
   grid-area: cookie3;
 }
 
-.cookie1 img {
-  transform: translate(-90px, 60px);
-}
-
 .cookie1,
 .cookie2,
 .cookie3 {
-  width: 200px;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -122,10 +121,44 @@ body {
 .cookie1 img,
 .cookie2 img,
 .cookie3 img {
-  width: 80%;
-  height: 80%;
-  object-fit: contain;
+  position: absolute;
+  height: 200px;
 }
+
+.cookie1 img {
+  right: 20rem;
+}
+
+.cookie2 img {
+  left: 15rem;
+}
+.cookie3 img {
+  right: 10rem;
+}
+
+/* .cookie1 img { */
+/*   transform: translate(-300px, 80px); */
+/* } */
+/**/
+/* .cookie3 img { */
+/*   transform: translate(-400px, 10px); */
+/* } */
+/* .cookie1, */
+/* .cookie2, */
+/* .cookie3 { */
+/*   width: 400px; */
+/*   display: flex; */
+/*   justify-content: center; */
+/*   align-items: center; */
+/* } */
+
+/* .cookie1 img, */
+/* .cookie2 img, */
+/* .cookie3 img { */
+/*   width: 80%; */
+/*   height: 80%; */
+/*   object-fit: contain; */
+/* } */
 
 /* Navbar */
 .navbar {
@@ -159,7 +192,7 @@ body {
 .hrefcookies {
   color: white;
   font-weight: 700;
-  font-size: 1.4rem;
+  font-size: 1rem;
   text-decoration: none;
 }
 
@@ -168,6 +201,59 @@ body {
 .hrefcookies:hover,
 .hrefcookies:active {
   color: #16316e;
+}
+
+/* Bio */
+
+.bio {
+  display: grid;
+
+  grid-template-columns: minmax(220px, 1fr) minmax(0, 1.5fr);
+
+  grid-template-rows: repeat(1, auto);
+
+  grid-template-areas: "bio-image bio-text";
+
+  min-height: 65vh;
+  box-sizing: border-box;
+}
+
+.flexed-bio {
+  display: flex;
+  align-items: center;
+}
+
+.description {
+  grid-area: bio-text;
+  color: #16316e;
+  max-width: 50rem;
+  width: 100%;
+}
+
+.bio-name {
+  font-weight: 700;
+  font-size: 4rem;
+  margin-bottom: 1.8rem;
+  line-height: 0.9;
+}
+
+.bio-description {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.bio-image {
+  grid-area: bio-image;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bio-image img {
+  max-width: 89%;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Footer */
