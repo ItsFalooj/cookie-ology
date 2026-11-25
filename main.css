@@ -136,6 +136,22 @@ h1 {
   right: 10rem;
 }
 
+@media screen and (max-width: 600px) {
+  /* Your existing mobile styles... */
+  .hero-button,
+  .nav-button {
+    font-size: 1.1rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  .cookie1 img,
+  .cookie2 img,
+  .cookie3 img {
+    position: static;
+    height: 150px;
+  }
+}
+
 /* .cookie1 img { */
 /*   transform: translate(-300px, 80px); */
 /* } */
@@ -178,7 +194,63 @@ h1 {
   box-sizing: border-box;
   z-index: 1000;
 }
+/* Navigation links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
 
+/* Hamburger button */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+}
+
+/* Mobile navbar */
+@media screen and (max-width: 600px) {
+  .navbar {
+    justify-content: space-between;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    width: 100%;
+
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+
+    padding: 1.5rem;
+    box-sizing: border-box;
+    background-color: #864c27;
+  }
+
+  .navbar.menu-open .nav-links {
+    display: flex;
+  }
+}
 .logo {
   margin-right: auto;
 }
@@ -226,7 +298,7 @@ h1 {
 .description {
   grid-area: bio-text;
   color: #16316e;
-  max-width: 50rem;
+  max-width: 70rem;
   width: 100%;
 }
 
@@ -254,6 +326,56 @@ h1 {
   max-width: 89%;
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 600px) {
+  .bio {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "bio-image"
+      "bio-text";
+    gap: 2rem;
+    padding: 2rem 1rem;
+    min-height: auto;
+  }
+
+  .bio-image {
+    justify-content: center;
+  }
+
+  .bio-image img {
+    max-width: 75%;
+  }
+
+  .flexed-bio {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .description {
+    text-align: center;
+    max-width: 30rem;
+    margin: 0 auto;
+  }
+
+  .bio-name {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .bio-description {
+    font-size: 0.95rem;
+    line-height: 1.6rem;
+  }
+
+  .footer {
+    flex-wrap: wrap;
+    height: auto;
+    min-height: 2.5rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    gap: 1rem;
+  }
 }
 
 /* Footer */

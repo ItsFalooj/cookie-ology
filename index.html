@@ -8,15 +8,24 @@
   </head>
 
   <body>
-    <!-- Navigation -->
     <nav class="navbar">
       <a href="index.html" class="logo">
         <img src="assets/cookieology-logo.png" alt="Cookie-Ology" />
       </a>
 
-      <a href="aboutus.html" class="hrefaboutus">About us</a>
-      <a href="cookies.html" class="hrefcookies">Cookies!</a>
-      <button class="nav-button">Order now!</button>
+      <!-- Hamburger button -->
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Navigation links -->
+      <div class="nav-links">
+        <a href="#about-us" class="hrefaboutus">About us</a>
+        <a href="cookies.html" class="hrefcookies">Cookies!</a>
+        <button class="nav-button">Order now!</button>
+      </div>
     </nav>
 
     <!-- Main content -->
@@ -52,7 +61,7 @@
 
       <!-- Bio -->
 
-      <div class="bio">
+      <div class="bio" id="about-us">
         <div class="bio-image"><img src="./assets/biopic2.png" alt="Bio image" /></div>
         <div class="flexed-bio">
           <div class="description">
