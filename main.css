@@ -1,19 +1,38 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
-/* General */
+/* ==============================
+   General
+============================== */
+
 body {
   margin: 0;
   background-color: #e9d0ad;
   font-family: "Noto Sans", serif;
 }
 
-/* Main content grid */
+h1 {
+  margin-top: 0;
+}
+
+/* ==============================
+   Wrapper
+============================== */
+
+.wrapper {
+  width: 100%;
+  max-width: 1064px;
+  padding: 0 2rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* ==============================
+   Main Section / Grid
+============================== */
 
 .section {
   display: grid;
-
   grid-template-columns: minmax(0, 1.5fr) minmax(220px, 1fr);
-
   grid-template-rows: repeat(3, auto);
 
   grid-template-areas:
@@ -26,29 +45,20 @@ body {
   box-sizing: border-box;
 }
 
-h1 {
-  margin-top: 0;
-}
+/* ==============================
+   Hero
+============================== */
 
-/* Wrapper */
-.wrapper {
-  width: 100%;
-  max-width: 1064px;
-  padding: 0 2rem;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-
-/* Hero */
 .hero {
   /* background-image: url("./assets/cookieology-herobg3.png"); */
   grid-area: hero;
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
 
   display: flex;
   align-items: center;
+
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
 }
 
 .hero-content {
@@ -61,8 +71,8 @@ h1 {
 .hero-header {
   font-weight: 700;
   font-size: 4rem;
-  margin-bottom: 1.8rem;
   line-height: 0.9;
+  margin-bottom: 1.8rem;
 }
 
 .hero-p {
@@ -71,16 +81,22 @@ h1 {
   line-height: 1.5rem;
 }
 
-/* Buttons */
+/* ==============================
+   Buttons
+============================== */
+
 .hero-button,
 .nav-button {
   font-weight: 400;
   font-size: 1rem;
   color: white;
-  border-radius: 0.5rem;
+
   background-color: brown;
   border: 1px solid black;
+  border-radius: 0.5rem;
+
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
   padding: 0.5rem 1rem;
   line-height: 1;
 }
@@ -96,6 +112,10 @@ h1 {
   color: brown;
   background-color: white;
 }
+
+/* ==============================
+   Cookie Images
+============================== */
 
 .cookie1 {
   grid-area: cookie1;
@@ -113,6 +133,7 @@ h1 {
 .cookie2,
 .cookie3 {
   position: relative;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -132,51 +153,15 @@ h1 {
 .cookie2 img {
   left: 15rem;
 }
+
 .cookie3 img {
   right: 10rem;
 }
 
-@media screen and (max-width: 600px) {
-  /* Your existing mobile styles... */
-  .hero-button,
-  .nav-button {
-    font-size: 1.1rem;
-    padding: 0.8rem 1.5rem;
-  }
+/* ==============================
+   Navbar
+============================== */
 
-  .cookie1 img,
-  .cookie2 img,
-  .cookie3 img {
-    position: static;
-    height: 150px;
-  }
-}
-
-/* .cookie1 img { */
-/*   transform: translate(-300px, 80px); */
-/* } */
-/**/
-/* .cookie3 img { */
-/*   transform: translate(-400px, 10px); */
-/* } */
-/* .cookie1, */
-/* .cookie2, */
-/* .cookie3 { */
-/*   width: 400px; */
-/*   display: flex; */
-/*   justify-content: center; */
-/*   align-items: center; */
-/* } */
-
-/* .cookie1 img, */
-/* .cookie2 img, */
-/* .cookie3 img { */
-/*   width: 80%; */
-/*   height: 80%; */
-/*   object-fit: contain; */
-/* } */
-
-/* Navbar */
 .navbar {
   display: flex;
   align-items: center;
@@ -191,66 +176,19 @@ h1 {
   top: 0;
   left: 0;
   width: 100%;
+
   box-sizing: border-box;
   z-index: 1000;
 }
-/* Navigation links */
+
+/* Navigation Links */
+
 .nav-links {
   display: flex;
   align-items: center;
   gap: 2rem;
 }
 
-/* Hamburger button */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.5rem;
-}
-
-.menu-toggle span {
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  border-radius: 3px;
-}
-
-/* Mobile navbar */
-@media screen and (max-width: 600px) {
-  .navbar {
-    justify-content: space-between;
-  }
-
-  .menu-toggle {
-    display: flex;
-  }
-
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 3rem;
-    left: 0;
-    width: 100%;
-
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-
-    padding: 1.5rem;
-    box-sizing: border-box;
-    background-color: #864c27;
-  }
-
-  .navbar.menu-open .nav-links {
-    display: flex;
-  }
-}
 .logo {
   margin-right: auto;
 }
@@ -275,15 +213,35 @@ h1 {
   color: #16316e;
 }
 
-/* Bio */
+/* Hamburger Menu */
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+}
+
+/* ==============================
+   Bio / About Us
+============================== */
 
 .bio {
   display: grid;
-
   grid-template-columns: minmax(220px, 1fr) minmax(0, 1.5fr);
-
   grid-template-rows: repeat(1, auto);
-
   grid-template-areas: "bio-image bio-text";
 
   min-height: 65vh;
@@ -305,8 +263,8 @@ h1 {
 .bio-name {
   font-weight: 700;
   font-size: 4rem;
-  margin-bottom: 1.8rem;
   line-height: 0.9;
+  margin-bottom: 1.8rem;
 }
 
 .bio-description {
@@ -317,6 +275,7 @@ h1 {
 
 .bio-image {
   grid-area: bio-image;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -328,12 +287,152 @@ h1 {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* ==============================
+   Footer
+============================== */
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+
+  background-color: #864c27;
+  height: 2.5rem;
+}
+
+.licensing,
+.googlemaps {
+  color: #16316e;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.licensing:hover,
+.licensing:active,
+.googlemaps:hover,
+.googlemaps:active {
+  color: white;
+}
+
+/* ==============================
+   Mobile Responsive Styles
+============================== */
+
 @media screen and (max-width: 600px) {
+  /* Mobile Hero and Cookie Layout */
+
+  .section {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+
+    grid-template-areas:
+      "hero hero"
+      "cookie1 cookie2"
+      "cookie3 cookie3";
+
+    min-height: auto;
+    padding-top: 10rem;
+    row-gap: 0.25rem;
+  }
+
+  .hero {
+    justify-content: center;
+    text-align: center;
+    padding: 1rem 0 3rem;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-header {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-p {
+    font-size: 0.95rem;
+    line-height: 1.4rem;
+  }
+
+  /* Mobile Cookies */
+
+  .cookie1,
+  .cookie2,
+  .cookie3 {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 0;
+    height: 115px;
+  }
+
+  .cookie1 img,
+  .cookie2 img,
+  .cookie3 img {
+    position: static;
+
+    height: 110px;
+    max-width: 100%;
+    object-fit: contain;
+
+    left: auto;
+    right: auto;
+  }
+
+  /* Mobile Buttons */
+
+  .hero-button,
+  .nav-button {
+    font-size: 1.1rem;
+    padding: 0.8rem 1.5rem;
+    margin-top: 2rem;
+  }
+
+  /* Mobile Navbar */
+
+  .navbar {
+    justify-content: space-between;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    width: 100%;
+
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+
+    padding: 1.5rem;
+    box-sizing: border-box;
+
+    background-color: #864c27;
+  }
+
+  .navbar.menu-open .nav-links {
+    display: flex;
+  }
+
+  /* Mobile Bio */
+
   .bio {
     grid-template-columns: 1fr;
     grid-template-areas:
       "bio-image"
       "bio-text";
+
     gap: 2rem;
     padding: 2rem 1rem;
     min-height: auto;
@@ -368,37 +467,14 @@ h1 {
     line-height: 1.6rem;
   }
 
+  /* Mobile Footer */
+
   .footer {
     flex-wrap: wrap;
-    height: auto;
+    height: 2.5rem;
     min-height: 2.5rem;
     padding: 1rem;
     box-sizing: border-box;
     gap: 1rem;
   }
-}
-
-/* Footer */
-.footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-
-  background-color: #864c27;
-  height: 2.5rem;
-}
-
-.licensing,
-.googlemaps {
-  color: #16316e;
-  font-weight: 700;
-  font-size: 1rem;
-}
-
-.licensing:hover,
-.licensing:active,
-.googlemaps:hover,
-.googlemaps:active {
-  color: white;
 }
