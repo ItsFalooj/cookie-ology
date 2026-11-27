@@ -596,3 +596,57 @@ h1 {
     gap: 1rem;
   }
 }
+/* ==============================
+   Responsive Cookie Menu
+============================== */
+
+@media screen and (max-width: 758px) {
+  /* Cookie Menu Grid */
+
+  .hrefmenu {
+    grid-template-columns: minmax(0, 1fr);
+
+    grid-template-areas:
+      "title"
+      "menu1"
+      "menu2"
+      "menu3"
+      "menu4";
+
+    gap: 1.5rem;
+  }
+
+  /* Cookie Cards */
+
+  .cookieslider1,
+  .cookieslider2,
+  .cookieslider3,
+  .cookieslider4 {
+    min-height: 350px;
+  }
+
+  /* Cookie Images */
+
+  .menucookieimage1 img,
+  .menucookieimage2 img,
+  .menucookieimage3 img,
+  .menucookieimage4 img {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* Add to Cart Button */
+
+  .flexedcartbtn {
+    width: 100%;
+    padding: 0 1.5rem 1.5rem;
+    box-sizing: border-box;
+  }
+
+  .addtocartbtn {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
