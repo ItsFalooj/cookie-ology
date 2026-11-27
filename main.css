@@ -359,7 +359,7 @@ h1 {
   align-items: center;
   justify-content: center;
 
-  color: #16316e;
+  color: #e9c38d;
 
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
@@ -372,6 +372,14 @@ h1 {
   display: grid;
   place-items: center;
   width: 100%;
+  min-height: 0;
+}
+
+.menucookieimage1 img,
+.menucookieimage2 img,
+.menucookieimage3 img,
+.menucookieimage4 img {
+  width: 300px;
   min-height: 0;
 }
 
